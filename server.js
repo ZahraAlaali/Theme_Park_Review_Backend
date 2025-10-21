@@ -1,6 +1,7 @@
 const express = require("express")
 const logger = require("morgan")
 const cors = require("cors")
+require("dotenv").config()
 
 // Require Routers
 const RatingRouter = require("./routes/ratingRouter")
