@@ -6,7 +6,7 @@ const getRatings = async (req, res) => {
     if (RideInDatabase) {
       const reviews = await Rating.find({
         rideId: RideInDatabase._id,
-      }).populate("rideId")
+      })
       res.send(reviews)
     } else {
       res.status(400).send("no rides found")

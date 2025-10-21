@@ -9,6 +9,15 @@ exports.getRides = async (req, res) => {
   }
 }
 
+exports.getRide = async (req, res) => {
+  try {
+    const ride = await Rides.findById(req.params.rideId)
+    res.send(ride)
+  } catch (error) {
+    throw error
+  }
+}
+
 exports.postRides = async (req, res) => {
   try {
     const rides = await Rides.findOne({ name: req.body.name })
