@@ -6,7 +6,7 @@ const ratingSchema = new Schema(
     rating: { type: Number, required: true },
     review: { type: String, required: true },
     image: { type: String },
-    game_id: { type: String, required: true },
+    rideId: { type: mongoose.Schema.Types.ObjectId, ref: "Rides" },
   },
   { timestamps: true }
 )
