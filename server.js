@@ -5,6 +5,7 @@ require("dotenv").config()
 
 // Require Routers
 const RatingRouter = require("./routes/ratingRouter")
+const rideRouter = require("./routes/ridesRouter")
 
 const PORT = process.env.PORT || 3000
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }))
 
 // Use Routers
 app.use("/rating", RatingRouter)
+app.use("/rides", rideRouter)
 
 app.use("/", (req, res) => {
   res.send(`Connected!`)
