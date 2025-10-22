@@ -3,7 +3,7 @@ const { Rides } = require("../models")
 exports.getRides = async (req, res) => {
   try {
     const rides = await Rides.find()
-    res.send(rides)
+    res.status(200).send(rides)
   } catch (error) {
     throw error
   }
@@ -12,7 +12,7 @@ exports.getRides = async (req, res) => {
 exports.getRide = async (req, res) => {
   try {
     const ride = await Rides.findById(req.params.rideId)
-    res.send(ride)
+    res.status(200).send(ride)
   } catch (error) {
     throw error
   }
