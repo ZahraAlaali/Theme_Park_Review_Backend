@@ -1,6 +1,6 @@
 const router = require("express").Router()
 
-const rideCtrl = require("../controllers/ridesCOntroller")
+const rideCtrl = require("../controllers/ridesController")
 
 // Routes
 router.get("/", rideCtrl.getRides)
