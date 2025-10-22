@@ -7,7 +7,7 @@ const getRatings = async (req, res) => {
       const reviews = await Rating.find({
         rideId: RideInDatabase._id,
       })
-      res.send(reviews)
+      res.status(200).send(reviews)
     } else {
       res.status(400).send("no rides found")
     }
@@ -21,7 +21,7 @@ const craeteReview = async (req, res) => {
     const RideInDatabase = await Rides.findOne({ _id: req.params.rideId })
     if (RideInDatabase) {
       const review = await Rating.create(req.body)
-      res.send(review)
+      res.status(200).send(review)
     } else {
       res.status(400).send("no ride found")
     }
